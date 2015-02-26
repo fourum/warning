@@ -1,0 +1,19 @@
+{
+    "name": "fourum/warning",
+    "description": "A warning system for Fourum",
+    "authors": [
+        {
+            "name": "Will Pillar",
+            "email": "me@willpillar.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Fourum\\Warning\\": "src/"
+        }
+    },
+    "require": {
+        "fourum/support": "dev-master"
+    }
+}
