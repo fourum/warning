@@ -134,12 +134,6 @@ class WarningServiceProvider extends ServiceProvider
             ]);
             $menu->addItem($item);
         });
-
-        Event::listen('admin.settings.sidebar.created', function($menu) {
-            $menu->addItem(
-                new LinkItem('warnings', '/admin/settings/warnings')
-            );
-        });
     }
 
     protected function registerRoutes()
@@ -148,6 +142,5 @@ class WarningServiceProvider extends ServiceProvider
         Route::post('/warning/create', 'Fourum\Warning\Http\Controllers\Front\WarningController@postCreate');
 
         Route::get('/admin/warnings', 'Fourum\Warning\Http\Controllers\Admin\WarningController@index');
-        Route::get('/admin/settings/warnings', 'Fourum\Warning\Http\Controllers\Admin\WarningController@settings');
     }
 }
