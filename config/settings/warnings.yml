@@ -1,0 +1,5 @@
+max_points_per_warning:
+    title: "Maximum Points Per Warning"
+    description: "The maximum number of points allowed for one warning."
+    value: "10"
+    type: "text"
