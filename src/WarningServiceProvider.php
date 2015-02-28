@@ -32,6 +32,7 @@ class WarningServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__.'/../views', 'warning');
+        $this->loadSettingsFrom(__DIR__.'/../config/settings');
 
         if (! Schema::hasTable('warnings')) {
             Schema::create('warnings', function($table) {
@@ -53,7 +54,6 @@ class WarningServiceProvider extends ServiceProvider
 
         $this->registerEvents();
         $this->registerRoutes();
-        $this->registerSettings();
     }
 
     /**
@@ -101,12 +101,6 @@ class WarningServiceProvider extends ServiceProvider
     public function getPackageDescription()
     {
         return 'A warning system for Fourum.';
-    }
-
-    protected function registerSettings()
-    {
-        $fileRepo = $this->app->make('Fourum\Setting\Filesystem\SettingRepository');
-        $fileRepo->addPath(__DIR__ . "/../config/settings");
     }
 
     protected function registerEvents()
